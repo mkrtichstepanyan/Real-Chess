@@ -1,0 +1,35 @@
+body {
+    background-color: #0d7a54;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5em;
+    box-sizing: border-box;
+}
+
+.textToBeCopied {
+    border: none;
+    padding: 1em;
+    font-size: 1.1rem;
+    width: 20em;
+}
+
+.copyButton {
+    border-radius: 10px;
+    padding: 1em;
+    width: 22em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+    border: none;
+    background: #000000;
+    color: white;
+    position: relative;
+    transition: .2s;
+}
+
+.copyButton.active {
+    background: #061A40;
+}
+

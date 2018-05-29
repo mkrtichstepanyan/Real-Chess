@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=410; user-scalable=no; minimal-ui">
+    <title>Real Chess</title>
+    <link rel="stylesheet" href="../static/index/lib/chessboard-0.3.0.min.css">
+    <link rel="stylesheet" href="../static/index/lib/ui-light.css"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel="stylesheet" href="../static/button/css/style.css">
+
+</head>
+<body>
+{% if token==null %}
+    <button type="button" class="copyButton" id="play" onclick="play()">Play</button>
+{% endif %}
+
+<div id='gameBoard' style="width: 300px"></div>
+
+<div id="copyDiv" style="display: none; text-align: center">
+    <h1>Copy and send this link to your opponent</h1>
+    <input type="text" value="" class="textToBeCopied" readonly=""/><br>
+    <button class="copyButton">Copy</button>
+</div>
+
+
+<script src="../static/index/lib/socket.io.js"></script>
+<script src="../static/index/lib/jquery-1.11.1.js"></script>
+<script src="../static/index/lib/chess.min.js"></script>
+<script src="../static/index/lib/chessboard-0.3.0.min.js"></script>
+{% if token %}
+    <script>var x = "{{ token }}"</script>
+    <script src="../static/index/js/client2.js"></script>
+{% else %}
+    <script src="../static/index/js/client1.js"></script>
+{% endif %}
+
+<script src="../static/index/lib/index.js"></script>
+</body>
+</html>
